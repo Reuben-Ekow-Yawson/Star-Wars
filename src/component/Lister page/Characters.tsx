@@ -41,6 +41,7 @@ const Characters: React.FC = () => {
     setDetails(response.result);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getData = async () => {
     const myData = await fetch(
       `https://www.swapi.tech/api/people?page=${page}&limit=10`
@@ -52,7 +53,7 @@ const Characters: React.FC = () => {
 
   useEffect(() => {
     getData();
-  }, [page]);
+  }, [getData, page]);
 
   return (
     <div className="character-container">
