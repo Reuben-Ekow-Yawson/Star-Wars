@@ -124,7 +124,7 @@ const Characters: React.FC = () => {
         </Modal.Footer>
       </Modal>
 
-      <Pagination size="lg" className="pages">
+      <Pagination className="pages">
         {items}
       </Pagination>
     </div>
