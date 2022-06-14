@@ -103,7 +103,7 @@ const Characters: React.FC = () => {
             </Card>
           ))}
       </section>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Name: {details?.properties?.name} </Modal.Title>
         </Modal.Header>
