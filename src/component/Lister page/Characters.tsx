@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Modal, Pagination } from "react-bootstrap";
 import "./characters.css";
 import Card from "@mui/material/Card";
@@ -42,18 +42,18 @@ const Characters: React.FC = () => {
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getData = async () => {
+  const getData = useCallback(async () => {
     const myData = await fetch(
       `https://www.swapi.tech/api/people?page=${page}&limit=10`
     );
     const response = await myData.json();
     setData(response.results);
     console.log(response.results);
-  };
+  }, [page]);
 
   useEffect(() => {
     getData();
-  }, [getData, page]);
+  }, [page]);
 
   return (
     <div className="character-container">
@@ -87,6 +87,7 @@ const Characters: React.FC = () => {
                     {list.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
+                  {/* {details.properties?.birth_year} */}
                     <p>A person within the Star Wars universe</p>
                   </Typography>
                 </CardContent>
@@ -97,7 +98,7 @@ const Characters: React.FC = () => {
                   color="primary"
                   onClick={() => handleShow(list.uid)}
                 >
-                  More
+                  More Details
                 </Button>
               </CardActions>
             </Card>
