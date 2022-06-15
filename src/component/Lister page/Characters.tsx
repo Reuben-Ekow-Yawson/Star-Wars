@@ -53,6 +53,7 @@ const Characters: React.FC = () => {
 
   useEffect(() => {
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   return (
@@ -87,7 +88,6 @@ const Characters: React.FC = () => {
                     {list.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                  {/* {details.properties?.birth_year} */}
                     <p>A person within the Star Wars universe</p>
                   </Typography>
                 </CardContent>
