@@ -5,6 +5,7 @@ import CharactersState from "./CharactersState/CharactersState";
 import Footer from "./component/footer/Footer";
 import Header from "./component/header/Header";
 import Characters from "./component/Lister page/Characters";
+import DetailsPage from "./component/Lister page/DetailsPage";
 import Home from "./pages/Home/Home";
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters />} />
+          <Route path="/details" element={<DetailsPage />} />
+          <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
       </BrowserRouter>    
